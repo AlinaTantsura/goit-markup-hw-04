@@ -1,10 +1,12 @@
 :root {
+    --primary-brand-color: #4D5AE5;
     --light-main-color: #FFFFFF;
     --light-accent-color: #F4F4FD;
     --border-color:#E7E9FC;
     --gray-color:#2e2f42;
     --paragraf-color:#434455;
     --link-hover-color:#404BBF;
+    --light-slate:#8E8F99 ;
 }
 body{
     font-family: "Roboto", sans-serif;
@@ -88,7 +90,7 @@ img{
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #4D5AE5;
+    color: var(--primary-brand-color);
     margin-right: 76px;
 }
 
@@ -162,7 +164,7 @@ img{
 }
 
 .order-btn{
-    background: #4D5AE5;
+    background: var(--primary-brand-color);
     min-width: 169px;
     height: 56px;
     font-weight: 500;
@@ -197,7 +199,16 @@ img{
 .advantage-item{
     width: calc((100% - 24px * 3) / 4);
 }
+.advantage-icon-link{
+    display: block;
+    background-color: var(--light-accent-color);
+    border-radius: 4px;
+    padding: 24px 100px;
+    margin-bottom: 8px;
+}
+.advantage-icon{
 
+}
 .title-advantage-list{
     font-weight: 500;
     font-size: 20px;
@@ -281,16 +292,52 @@ img{
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.team-icon-list{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-icon-link{
+    background-color: var(--primary-brand-color);
+    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
 }
 
 .client-section{
     padding: 120px 0;
 }
 
+.client-list{
+    display: flex;
+    gap: 24px;
+}
+
+.client-list-item{
+    width: calc((100% - 24px * 5) / 6);
+}
+
+.client-icon-link{
+    display: block;
+    padding: 16px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--light-slate);
+}
 .footer{
     background: var(--gray-color);
     padding-top: 100px;
     padding-bottom: 100px;
+}
+.footer-box{
+    display: flex;
+    gap: 120px;
 }
 
 .footer .logo{
@@ -309,6 +356,31 @@ img{
 
 .logo-part-footer{
    color: var(--light-accent-color);
+}
+.footer-title{
+    color: var(--light-main-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0.67;
+    letter-spacing: 0.32px;
+    margin-bottom: 16px;
+}
+
+.footer-social-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-social-link{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--primary-brand-color);
+
 }
 
 .portfolio-section{
@@ -330,7 +402,7 @@ img{
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.04em;
-    color: #4D5AE5;
+    color: var(--primary-brand-color);
     padding: 12px 24px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
