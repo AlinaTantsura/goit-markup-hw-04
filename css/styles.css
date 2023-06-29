@@ -8,6 +8,7 @@
     --link-hover-color:#404BBF;
     --light-slate:#8E8F99;
     --modal-background: #FCFCFC;
+    --green-media-color: #31D0AA;
     --transition-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -166,6 +167,7 @@ img{
     gap: 40px;
 }
 
+/* Main section styles */
 .main-section{
     max-width: 1440px;
     margin: 0 auto;
@@ -216,6 +218,7 @@ img{
     background: var(--link-hover-color);
 }
 
+/* Advantage section styles */
 .advantages-section{
     padding: 120px 0;
 }
@@ -251,6 +254,8 @@ img{
     letter-spacing: 0.02em;
     
 }
+
+/* Doing section styles */
 .doing-section{
     padding-bottom: 120px;
 }
@@ -274,6 +279,7 @@ img{
     width: calc((100% - 2 * 24px)/3);
 }
 
+/* Team section styles */
 .team-section{
     background-color: var(--light-accent-color);
     padding-top: 120px;
@@ -335,8 +341,17 @@ img{
     width: 40px;
     height: 40px;
     padding: 12px;
+
+    transition: background-color var(--transition-time);
 }
 
+
+.team-card:hover .team-icon-link,
+.team-card:focus .team-icon-link{
+    background-color: var(--link-hover-color);
+}
+
+/* Client section styles */
 .client-section{
     padding: 120px 0;
 }
@@ -351,12 +366,29 @@ img{
 }
 
 .client-icon-link{
-    display: block;
-    padding: 16px 32px;
-    border-radius: 4px;
+    display: flex;
+    width: 168px;
+    height: 88px;
+    justify-content: center;
+    align-items: center;
+
     border: 1px solid var(--light-slate);
+    border-radius: 4px;
+
+    transition: border var(--transition-time);
 }
 
+.client-icon-link:hover,
+.client-icon-link:focus{
+    border: 1px solid var(--link-hover-color);
+}
+.client-icon-item{
+    fill: var(--light-slate);
+}
+
+.client-icon-link:hover .client-icon-item{
+    fill: var(--link-hover-color);
+}
 /* Footer styles */
 
 .footer{
@@ -390,7 +422,7 @@ img{
     color: var(--light-main-color);
     font-size: 16px;
     font-weight: 500;
-    line-height: 0.67;
+    line-height: 1.5;
     letter-spacing: 0.32px;
     margin-bottom: 16px;
 }
@@ -410,6 +442,12 @@ img{
     padding: 8px;
     background-color: var(--primary-brand-color);
 
+    transition: background-color var(--transition-time);
+
+}
+.footer-social-link:hover,
+.footer-social-link:focus{
+    background-color: var(--green-media-color);
 }
 
 /* Portfolio styles */
@@ -466,12 +504,44 @@ img{
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+.work-card-wrap{
+    position: relative;
+    overflow: hidden;
+}
+
 .work-card-info{
     padding: 32px 16px;
     border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
 }
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 300px;
+
+    padding: 40px 32px 164px;
+    color: var(--light-accent-color);
+    background-color: var(--primary-brand-color);
+    transform: translateY(100%);
+
+    transition: transform var(--transition-time);
+}
+
+.work-card:hover .overlay{
+    transform: translateY(0%);
+}
+
+.overlay-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+}
+
 .img-title{
     font-weight: 500;
     font-size: 20px;
@@ -499,6 +569,8 @@ img{
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
+
+    transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
 }
 .backdrop.is-hidden{
     opacity: 0;
@@ -517,6 +589,12 @@ img{
     border-radius: 4px;
     background: var(--modal-background);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    transition: scale 400ms ease-in-out 400ms;
+    scale: 100%;
+}
+
+.backdrop.is-hidden .modal{
+    scale: 50%;
 }
 
 .modal-btn{
@@ -532,12 +610,4 @@ img{
     border: 1px solid rgba(0, 0, 0, 0.10);
     border-radius: 50%;
     background-color: var(--border-color);
-}
-.modal-icon{
-    
-    
-    /* padding: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    border-radius: 50%;
-    background-color: var(--border-color); */
 }
