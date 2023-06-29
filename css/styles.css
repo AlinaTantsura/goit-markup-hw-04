@@ -384,6 +384,8 @@ img{
 }
 .client-icon-item{
     fill: var(--light-slate);
+
+    transition: fill var(--transition-time);
 }
 
 .client-icon-link:hover .client-icon-item{
