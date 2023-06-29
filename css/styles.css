@@ -596,7 +596,7 @@ img{
 }
 
 .backdrop.is-hidden .modal{
-    scale: 50%;
+    scale: 0%;
 }
 
 .modal-btn{
