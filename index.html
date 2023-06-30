@@ -52,6 +52,7 @@
           </address>
         </div>
       </header>
+
       <main class="main-content">
         <section class="main-section">
           <div class="container main-section-box">
@@ -67,11 +68,11 @@
             <h2 class="visually-hidden">Our advantages</h2>
             <ul class="list advantages-list">
               <li class="advantage-item">
-                <a class="link advantage-icon-link">
+                <div class="advantage-icon-box">
                   <svg class="advantage-icon" width="64" height="64">
                     <use href="./images/icons.svg#antenna"></use>
                   </svg>
-                </a>
+                </div>
                 <h3 class="title-advantage-list">Strategy</h3>
                 <p class="text-advantage-list">
                   Our goal is to identify the business problem to walk away with
@@ -79,11 +80,11 @@
                 </p>
               </li>
               <li class="advantage-item">
-                <a class="link advantage-icon-link">
+                <div class="advantage-icon-box">
                   <svg class="advantage-icon" width="64" height="64">
                     <use href="./images/icons.svg#clock"></use>
                   </svg>
-                </a>
+                </div>
                 <h3 class="title-advantage-list">Punctuality</h3>
                 <p class="text-advantage-list">
                   Bring the key message to the brand's audience for the best
@@ -91,11 +92,11 @@
                 </p>
               </li>
               <li class="advantage-item">
-                <a class="link advantage-icon-link">
+                <div class="advantage-icon-box">
                   <svg class="advantage-icon" width="64" height="64">
                     <use href="./images/icons.svg#diagram"></use>
                   </svg>
-                </a>
+                </div>
                 <h3 class="title-advantage-list">Diligence</h3>
                 <p class="text-advantage-list">
                   Research and confirm brands that present the strongest digital
@@ -103,11 +104,11 @@
                 </p>
               </li>
               <li class="advantage-item">
-                <a class="link advantage-icon-link">
+                <div class="advantage-icon-box">
                   <svg class="advantage-icon" width="64" height="64">
                     <use href="./images/icons.svg#astronaut"></use>
                   </svg>
-                </a>
+                </div>
                 <h3 class="title-advantage-list">Technologies</h3>
                 <p class="text-advantage-list">
                   Design practice focused on digital experiences. We bring forth
@@ -120,7 +121,7 @@
 
         <section class="doing-section">
           <div class="container">
-            <h2 class="title-section doing-title-section">What are we doing</h2>
+            <h2 class="title-section">What are we doing</h2>
             <ul class="list doing-list">
               <li class="doing-item">
                 <img
@@ -166,28 +167,28 @@
                   <h3 class="team-name">Mark Guerrero</h3>
                   <p class="team-position">Product Designer</p>
                   <ul class="list team-icon-list">
-                    <li>
+                    <li class="team-list-item">
                       <a class="link team-icon-link" href="">
                         <svg class="team-icon-item" width="16" height="16">
                           <use href="./images/icons.svg#instagram"></use>
                         </svg>
                       </a>
                     </li>
-                    <li>
+                    <li class="team-list-item">
                       <a class="link team-icon-link" href="">
                         <svg class="team-icon-item" width="16" height="16">
                           <use href="./images/icons.svg#twitter"></use>
                         </svg>
                       </a>
                     </li>
-                    <li>
+                    <li class="team-list-item">
                       <a class="link team-icon-link" href="">
                         <svg class="team-icon-item" width="16" height="16">
                           <use href="./images/icons.svg#facebook"></use>
                         </svg>
                       </a>
                     </li>
-                    <li>
+                    <li class="team-list-item">
                       <a class="link team-icon-link" href="">
                         <svg class="team-icon-item" width="16" height="16">
                           <use href="./images/icons.svg#linkedin"></use>
@@ -391,30 +392,30 @@
             </p>
           </div>
           <div class="media-box">
-            <h4 class="footer-title">Social media</h4>
+            <p class="media-paragraf">Social media</p>
             <ul class="list footer-social-list">
-              <li>
+              <li class="social-list-item">
                 <a class="link footer-social-link" href="">
                   <svg class="footer-icon-item" width="24" height="24">
                     <use href="./images/icons.svg#instagram"></use>
                   </svg>
                 </a>
               </li>
-              <li>
+              <li class="social-list-item">
                 <a class="link footer-social-link" href="">
                   <svg class="footer-icon-item" width="24" height="24">
                     <use href="./images/icons.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
-              <li>
+              <li class="social-list-item">
                 <a class="link footer-social-link" href="">
                   <svg class="footer-icon-item" width="24" height="24">
                     <use href="./images/icons.svg#facebook"></use>
                   </svg>
                 </a>
               </li>
-              <li>
+              <li class="social-list-item">
                 <a class="link footer-social-link" href="">
                   <svg class="footer-icon-item" width="24" height="24">
                     <use href="./images/icons.svg#linkedin"></use>
@@ -427,9 +428,9 @@
       </footer>
 
       <!-- Modal Window -->
-      <div class="backdrop is-hidden" data-modal>
+      <div data-modal class="backdrop is-hidden">
         <div class="modal">
-          <button class="btn modal-btn" type="button" data-modal-close>
+          <button data-modal-close class="btn modal-btn" type="button">
             <svg class="modal-icon" width="8" height="8">
               <use href="./images/icons.svg#close-black"></use>
             </svg>

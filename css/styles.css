@@ -79,6 +79,9 @@ img{
 /* Header styles */
 .header {
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-box {
     display: flex;
@@ -110,10 +113,9 @@ img{
     align-items: center;
     gap: 40px;
 }
-.header-nav-item{
-    position: relative;
-}
+
 .header-nav{
+    position: relative;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -124,15 +126,18 @@ img{
     transition: color var(--transition-time);
 }
 
-.header-nav:hover,
-.header-nav:focus{
+.header-nav-item:hover .header-nav,
+.header-nav-item:focus .header-nav{
     color: var(--link-hover-color);
+}
+.header-nav.active{
+    color: var(--link-hover-color)
 }
 
 .header-nav.active::after{
     content: '';
     position: absolute;
-    bottom: -24px;
+    bottom: -1px;
     left: 0;
     display: block;
     width: 100%;
@@ -173,6 +178,7 @@ img{
     margin: 0 auto;
     background-color: var(--gray-color);
     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/people-office.jpg);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding-top: 188px;
@@ -192,7 +198,7 @@ img{
 }
 
 .order-btn{
-    background: var(--primary-brand-color);
+    background-color: var(--primary-brand-color);
     min-width: 169px;
     height: 56px;
     font-weight: 500;
@@ -210,12 +216,12 @@ img{
     display: block;
     margin: 0 auto;
 
-    transition: background var(--transition-time);
+    transition: background-color var(--transition-time);
 }
 
 .order-btn:hover,
 .order-btn:focus{
-    background: var(--link-hover-color);
+    background-color: var(--link-hover-color);
 }
 
 /* Advantage section styles */
@@ -230,11 +236,14 @@ img{
 .advantage-item{
     width: calc((100% - 24px * 3) / 4);
 }
-.advantage-icon-link{
-    display: block;
+
+.advantage-icon-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--light-accent-color);
+    height: 112px;
     border-radius: 4px;
-    padding: 24px 100px;
     margin-bottom: 8px;
 }
 
@@ -306,7 +315,7 @@ img{
     justify-content: center;
     align-items: center;
     gap: 8px;
-    padding: 32px 16px;
+    padding: 32px 0;
 }
 .team-name{
     font-weight: 500;
@@ -334,21 +343,30 @@ img{
     align-items: center;
 }
 
-.team-icon-link{
-    background-color: var(--primary-brand-color);
-    display: block;
-    border-radius: 50%;
+.team-list-item{
     width: 40px;
     height: 40px;
+}
+
+.team-icon-link{
+    background-color: var(--primary-brand-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     padding: 12px;
 
     transition: background-color var(--transition-time);
 }
 
 
-.team-card:hover .team-icon-link,
-.team-card:focus .team-icon-link{
+.team-icon-link:hover,
+.team-icon-link:focus{
     background-color: var(--link-hover-color);
+}
+
+.team-icon-item{
+    fill: var(--light-accent-color);
 }
 
 /* Client section styles */
@@ -374,22 +392,17 @@ img{
 
     border: 1px solid var(--light-slate);
     border-radius: 4px;
-
-    transition: border var(--transition-time);
+    color: var(--light-slate);
+    transition: border var(--transition-time), color var(--transition-time);
 }
 
 .client-icon-link:hover,
 .client-icon-link:focus{
     border: 1px solid var(--link-hover-color);
+    color: var(--link-hover-color);
 }
 .client-icon-item{
-    fill: var(--light-slate);
-
-    transition: fill var(--transition-time);
-}
-
-.client-icon-link:hover .client-icon-item{
-    fill: var(--link-hover-color);
+    fill: currentColor;
 }
 /* Footer styles */
 
@@ -400,7 +413,12 @@ img{
 }
 .footer-box{
     display: flex;
+    align-items: baseline;
     gap: 120px;
+}
+
+.logo-box{
+    margin-right: 120px;
 }
 
 .footer .logo{
@@ -420,7 +438,7 @@ img{
 .logo-part-footer{
    color: var(--light-accent-color);
 }
-.footer-title{
+.media-paragraf{
     color: var(--light-main-color);
     font-size: 16px;
     font-weight: 500;
@@ -435,11 +453,18 @@ img{
     align-items: center;
     gap: 16px;
 }
-
-.footer-social-link{
-    display: block;
+.social-list-item{
     width: 40px;
     height: 40px;
+}
+
+.footer-social-link{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     border-radius: 50%;
     padding: 8px;
     background-color: var(--primary-brand-color);
@@ -450,6 +475,10 @@ img{
 .footer-social-link:hover,
 .footer-social-link:focus{
     background-color: var(--green-media-color);
+}
+
+.footer-icon-item{
+    fill: var(--light-accent-color);
 }
 
 /* Portfolio styles */
@@ -572,44 +601,58 @@ img{
     height: 100%;
     background-color: rgba(46, 47, 66, 0.40);
 
-    transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 .backdrop.is-hidden{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
+
 .modal{
     position: absolute;
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%) scale(1); 
     width: 408px;
     height: 584px;
     flex-shrink: 0;
     border-radius: 4px;
-    background: var(--modal-background);
+    background-color: var(--modal-background);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-    transition: scale 400ms ease-in-out 400ms;
-    scale: 100%;
-}
-
-.backdrop.is-hidden .modal{
-    scale: 0%;
+    transition: transform var(--transition-time);
 }
 
 .modal-btn{
     position: absolute;
     top: 24px;
     right: 24px;
-    padding: 8px;
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.10);
     border-radius: 50%;
     background-color: var(--border-color);
+
+    transition: border var(--transition-time), background-color var(--transition-time);
+}
+
+.modal-btn:hover,
+.modal-btn:focus{
+    border: none;
+    background-color: var(--link-hover-color);
+}
+
+.modal-icon{
+    transition: fill var(--transition-time);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon{
+    fill: var(--light-main-color);
 }
